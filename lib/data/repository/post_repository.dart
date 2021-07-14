@@ -4,12 +4,12 @@ import 'package:http/http.dart';
 import 'package:state_management_bloc_pattern/data/model/post.dart';
 
 abstract class PostRepository {
-  Future<List<Post>> get getAllPosts;
+  Future<List<Post>> get allPosts;
 }
 
 class PostRepositoryImpl extends PostRepository {
   @override
-  Future<List<Post>> getAllPosts() async {
+  Future<List<Post>> allPosts() async {
     final response =
         await get(Uri.parse("https://jsonplaceholder.typicode.com/posts"));
     if (response.statusCode == 200) {
